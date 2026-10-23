@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 26 26%27%3E%3Cpath d=%27M13 2 L24 24 H2 Z%27 fill=%27none%27 stroke=%27%2324493a%27 stroke-width=%272.4%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M10 24 V17 H16 V24%27 fill=%27%23b98a1e%27/%3E%3C/svg%3E">
+<meta name="theme-color" content="#24493a">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Utisci gostiju · Mila</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap&subset=latin-ext">
+<style>
+:root{
+  --bg:#eef1ec;--surface:#f8faf6;--fg:#1c2a24;--muted:#5a6a62;--line:#cfd8cf;
+  --pine:#24493a;--pine-2:#3d6b55;--gold:#b98a1e;--gold-soft:#efe1bb;
+  --f-display:"Young Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1714;--surface:#16211c;--fg:#e4ebe5;--muted:#9aaba1;--line:#2a3a33;--pine:#7fb79a;--pine-2:#5d9479;--gold:#e0b44c;--gold-soft:#3a3018;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1714;--surface:#16211c;--fg:#e4ebe5;--muted:#9aaba1;--line:#2a3a33;--pine:#7fb79a;--pine-2:#5d9479;--gold:#e0b44c;--gold-soft:#3a3018;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6}
+[hidden]{display:none!important}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1{font-family:var(--f-display);font-weight:400;line-height:1.1;text-wrap:balance;margin:0;font-size:clamp(2.2rem,5vw,3.4rem)}
+p{margin:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.mono{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);font-family:var(--f-display);font-size:1.35rem}
+.brand svg{width:26px;height:26px}
+.back{color:var(--pine);font-weight:600;text-decoration:none}
+.back:hover{color:var(--gold)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:600 .8rem var(--f-mono);background:none;border:0;padding:6px 11px;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--pine);color:var(--bg)}
+.right{display:flex;align-items:center;gap:18px}
+main{padding-block:56px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.avg{display:flex;align-items:baseline;gap:10px}
+.avg b{font-family:var(--f-display);font-weight:400;font-size:2.4rem}
+.avg .stars{color:var(--gold);letter-spacing:.12em}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:32px;align-items:center}
+.chip{font:600 .88rem var(--f-body);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:var(--bg)}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+@media (max-width:720px){.list{grid-template-columns:1fr}}
+.rv{margin:0;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--surface);display:grid;gap:12px;align-content:start;min-width:0}
+.rv .stars{color:var(--gold);letter-spacing:.12em}
+.rv blockquote{margin:0;font-size:1.02rem}
+.rv figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.rv figcaption strong{color:var(--fg);font-weight:600}
+.empty{grid-column:1/-1;padding:40px 24px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);text-align:center;display:grid;gap:14px;justify-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 1rem var(--f-body);padding:12px 22px;border-radius:999px;border:1.5px solid var(--pine);background:var(--pine);color:var(--bg);text-decoration:none}
+.btn:hover{background:var(--pine-2);border-color:var(--pine-2)}
+footer{margin-top:96px;background:var(--pine);color:var(--bg)}
+footer .wrap{padding-block:36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer .mono{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+@media (max-width:440px){.wrap{padding-inline:16px}main{padding-block:32px 0}.right{gap:12px}.back{font-size:.95rem}.brand{font-size:1.2rem}.lang button{padding:10px 11px}.rv{padding:18px}.head{gap:16px}}
+@media (max-width:340px){.back{display:none}}
+@media (min-width:1440px){.wrap{max-width:1200px}}
+@media (hover:none){.btn,.chip{min-height:44px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Mila">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2 L24 24 H2 Z" fill="none" stroke="var(--pine)" stroke-width="2" stroke-linejoin="round"/><path d="M10 24 V17 H16 V24" fill="var(--gold)"/></svg>
+      Mila
+    </a>
+    <div class="right">
+      <a class="back" href="index.html" data-i="back">← Početna</a>
+      <div class="lang" role="group" aria-label="Jezik / Language">
+        <button type="button" id="l-sr" aria-pressed="true">SR</button>
+        <button type="button" id="l-en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <div>
+      <div class="mono" data-i="ey">Mila · A-frame Zlatibor</div>
+      <h1 style="margin-top:12px" data-i="h">Svi utisci gostiju</h1>
+    </div>
+    <div class="avg" id="avg" hidden></div>
+  </div>
+  <div class="tools" id="tools" hidden>
+    <span class="mono" data-i="sort">Redosled</span>
+    <button class="chip" type="button" id="s-new" aria-pressed="true" data-i="sNew">Najnoviji</button>
+    <button class="chip" type="button" id="s-best" aria-pressed="false" data-i="sBest">Najbolje ocenjeni</button>
+  </div>
+  <div class="list" id="list">
+    <div class="empty"><p data-i="empty">Još nema objavljenih utisaka. Prvi utisci gostiju pojaviće se ovde.</p><a class="btn" href="index.html#cene" data-i="book">Rezerviši boravak</a></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span style="font-family:var(--f-display);font-size:1.3rem">Mila · A-frame Zlatibor</span>
+    <span class="mono">43.72° N · 19.70° E</span>
+  </div>
+</footer>
+
+<script>
+const T={sr:{},en:{back:"← Home",ey:"Mila · A-frame Zlatibor",h:"All guest reviews",sort:"Sort",sNew:"Newest",sBest:"Highest rated",empty:"No reviews published yet. The first guest reviews will appear here.",book:"Book a stay"}};
+document.querySelectorAll("[data-i]").forEach(el=>T.sr[el.dataset.i]=el.textContent);
+const $=s=>document.querySelector(s);
+let lang="sr",sort="new",REVIEWS=[];
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const stars=n=>"★".repeat(n)+"☆".repeat(5-n);
+const score=r=>Math.max(0,Math.min(5,Math.round(+r.ocena||5)));
+function rvDate(d){const[y,m]=String(d||"").split("-").map(Number);if(!y)return"";return new Date(y,(m||1)-1,1).toLocaleDateString(lang==="sr"?"sr-Latn-RS":"en-GB",{month:"long",year:"numeric"})}
+function render(){
+  if(!REVIEWS.length)return;
+  const list=[...REVIEWS].sort(sort==="new"?(a,b)=>String(b.datum).localeCompare(String(a.datum)):(a,b)=>score(b)-score(a)||String(b.datum).localeCompare(String(a.datum)));
+  $("#list").innerHTML=list.map(r=>{const n=score(r);const txt=(lang==="en"&&r.tekst_en)?r.tekst_en:r.tekst;
+    return `<figure class="rv"><span class="stars" aria-label="${n}/5">${stars(n)}</span><blockquote>${esc(txt)}</blockquote><figcaption><strong>${esc(r.ime)}${r.mesto?", "+esc(r.mesto):""}</strong><span>${esc(rvDate(r.datum))}</span></figcaption></figure>`}).join("");
+  const a=REVIEWS.reduce((s,r)=>s+score(r),0)/REVIEWS.length;
+  $("#avg").innerHTML=`<b>${a.toFixed(1).replace(".",lang==="sr"?",":".")}</b><span class="stars">${stars(Math.round(a))}</span><span class="mono">${REVIEWS.length} ${lang==="sr"?"utisaka":"reviews"}</span>`;
+  $("#avg").hidden=false;$("#tools").hidden=false;
+}
+function setLang(l){lang=l;document.documentElement.lang=l;
+  document.querySelectorAll("[data-i]").forEach(el=>{const v=T[l][el.dataset.i];if(v!=null)el.textContent=v});
+  $("#l-sr").setAttribute("aria-pressed",l==="sr");$("#l-en").setAttribute("aria-pressed",l==="en");
+  document.title=(l==="sr"?"Utisci gostiju":"Guest reviews")+" · Mila";
+  try{localStorage.setItem("mila-lang",l)}catch(e){} render()}
+function setSort(s){sort=s;$("#s-new").setAttribute("aria-pressed",s==="new");$("#s-best").setAttribute("aria-pressed",s==="best");render()}
+$("#l-sr").onclick=()=>setLang("sr");$("#l-en").onclick=()=>setLang("en");
+$("#s-new").onclick=()=>setSort("new");$("#s-best").onclick=()=>setSort("best");
+let saved="sr";try{saved=localStorage.getItem("mila-lang")||"sr"}catch(e){}
+setLang(saved==="en"?"en":"sr");
+fetch("utisci.json",{cache:"no-store"}).then(r=>r.ok?r.json():[]).then(d=>{REVIEWS=Array.isArray(d)?d:[];render()}).catch(()=>{});
+</script>
+</body>
+</html>
